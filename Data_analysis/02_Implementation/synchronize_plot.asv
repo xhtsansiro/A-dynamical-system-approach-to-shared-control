@@ -1,0 +1,59 @@
+%% synchronize the plot of the haptic device and the robot trajectory.
+% original traj.
+d_m = load("org_traj/vsds.txt");
+h_r = load("org_traj/hd_real.txt");
+r_r = load("org_traj/robot_real.txt");
+limits_r = [-0.1, 0.6, -0.1, 0.5]; 
+plot_title_r = 'Trajectory of Robot'; vid_title_r = 'video/robot_traj_1';
+% robot 
+realtimePlot(r_r(:,2:3),d_m(:,1:2),limits_r, plot_title_r, vid_title_r);
+% haptic_device
+limits_h = [-0.1, 0.1, -0.1, 0.1]; 
+plot_title_h = 'Trajectory of Haptic Device'; vid_title_h = 'video/hd_traj_1';
+realtimePlot(h_r(:,2:3),d_m(:,3:4),limits_h, plot_title_h, vid_title_h);
+
+%% start from pos (0.6755,0.2442), failed one
+d_m = load("fail_traj_1/vsds.txt");
+h_r = load("fail_traj_1/hd_real.txt");
+r_r = load("fail_traj_1/robot_real.txt");
+limits_r = [0.1, 0.8, -0.1, 0.5]; 
+plot_title_r = 'Trajectory of Robot'; vid_title_r = 'video/robot_traj_2';
+% robot 
+realtimePlot(r_r(1:5064,2:3),d_m(:,1:2),limits_r, plot_title_r, vid_title_r);
+% haptic_device
+limits_h = [-0.1, 0.1, -0.1, 0.1]; 
+plot_title_h = 'Trajectory of Haptic Device'; vid_title_h = 'video/hd_traj_2';
+realtimePlot(h_r(:,2:3),d_m(:,3:4),limits_h, plot_title_h, vid_title_h);
+
+
+%% start from pos (0.6755,0.2442), successful one
+
+d_m = load("suc_traj_1/vsds.txt");
+h_r = load("suc_traj_1/hd_real.txt");
+r_r = load("suc_traj_1/robot_real.txt");
+limits_r = [0.1, 0.8, -0.1, 0.5]; 
+plot_title_r = 'Trajectory of Robot'; vid_title_r = 'video/robot_traj_3';
+% robot 
+realtimePlot(r_r(:,2:3),d_m(:,1:2),limits_r, plot_title_r, vid_title_r);
+% haptic_device
+limits_h = [-0.05, 0.15, -0.05, 0.15]; 
+plot_title_h = 'Trajectory of Haptic Device'; vid_title_h = 'video/hd_traj_3';
+realtimePlot(h_r(:,2:3),d_m(:,3:4),limits_h, plot_title_h, vid_title_h);
+
+
+
+%% start again from (-0.0468, 0.1508), with a new obstacle, failed one
+d_m = load("fail_traj_2/vsds.txt");
+h_r = load("fail_traj_2/hd_real.txt");
+r_r = load("fail_traj_2/robot_real.txt");
+limits_r = [-0.1, 0.6, -0.1, 0.5]; 
+plot_title_r = 'Trajectory of Robot'; vid_title_r = 'video/robot_traj_4';
+% robot 
+realtimePlot(r_r(1:6440,2:3),d_m(:,1:2),limits_r, plot_title_r, vid_title_r);
+% haptic_device
+limits_h = [-0.1, 0.1, -0.1, 0.1]; 
+plot_title_h = 'Trajectory of Haptic Device'; vid_title_h = 'video/hd_traj_4';
+realtimePlot(h_r(1:6,2:3),d_m(:,3:4),limits_h, plot_title_h, vid_title_h);
+
+
+%% start again from (-0.0468, 0.1508), with a new obstacle, successful one
